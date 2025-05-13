@@ -3,6 +3,7 @@ package com.spring.tutorial.v1_web_app_test.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,10 +18,10 @@ public class Expense {
 
     private Double amount;
 
-    private Date date;
+    private LocalDate date;
     private String expenseDescription;
 
-    @ManyToMany
+    @ManyToMany()
     @JoinTable(
             name = "expense_label",
             joinColumns = @JoinColumn(name = "expense_id"),
